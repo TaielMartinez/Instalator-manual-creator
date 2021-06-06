@@ -1,31 +1,46 @@
 {
-    "name": "Crear docker para laravel en servidor Ubuntu",
-    "version": "1.0",
-    "var": [
-        {
-            "<PASSWORD>": "jh3kj2h4w9f873jdf"
-        }
-    ],
+    "variables": {
+        "_CARPETA_INSTALADA": "_CARPETA_INSTALACION/_REPOSITORIO_NOMBRE",
+        "_GIT_SERVER": "github.com",
+        "_CARPETA_INSTALACION": "/home/taiel",
+        "_GIT_USER": "TaielMartinez",
+        "_REPOSITORIO_NOMBRE": "A_Las_Doce_Hablamos_Server",
+        "_GIT_TOKEN": "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",
+        "_LINUX_USER": "gort",
+        "_NEW_PASSWORD_DATABASE": "hjfghjksbgdhagdahsjkdgb"
+    },
     "tutorial": [
-        {
-            "type": "h1",
-            "text": "Nos conectamos al servidor por SSH"
-        },
-        {
-            "type": "h2",
-            "text": "Nos conectamos al servidor por SSH"
-        },
-        {
-            "type": "h3",
-            "text": "Nos conectamos al servidor por SSH"
-        },
-        {
-            "type": "code",
-            "text": "asjdlkasdhlkasjdlkasgdhasdghasd"
-        },
-        {
-            "type": "code_ext",
-            "text": "test"
-        }
+        "cd _CARPETA_INSTALACION",
+        "sudo git clone https://_GIT_TOKEN@github.com/_GIT_USER/_REPOSITORIO_NOMBRE.git",
+        "cd _CARPETA_INSTALADA",
+        "docker run --rm -v $(pwd):/app composer install",
+        "sudo chown -R _LINUX_USER:_LINUX_USER _CARPETA_INSTALADA",
+        "sudo nano _CARPETA_INSTALADA/docker-compose.yml",
+        "_FILE:docker-compose",
+        "sudo nano _CARPETA_INSTALADA/Dockerfile",
+        "_FILE:dockerfile",
+        "sudo mkdir _CARPETA_INSTALADA/php",
+        "sudo nano _CARPETA_INSTALADA/php/laravel.ini",
+        "_FILE:laravel_ini",
+        "sudo mkdir -p _CARPETA_INSTALADA/nginx/conf.d",
+        "sudo nano _CARPETA_INSTALADA/nginx/conf.d/app.conf",
+        "_FILE:app_conf",
+        "sudo mkdir _CARPETA_INSTALADA/mysql",
+        "sudo nano _CARPETA_INSTALADA/mysql/my.cnf",
+        "_FILE:my_conf",
+        "sudo cp _CARPETA_INSTALADA/.env.example _CARPETA_INSTALADA/.env",
+        "sudo nano _CARPETA_INSTALADA/.env",
+        "_FILE:env",
+        "docker-compose up -d",
+        "docker ps",
+        "cd _CARPETA_INSTALADA",
+        "docker-compose exec app bash",
+        "php artisan key:generate",
+        "php artisan config:cache",
+        "mysql -u root -p",
+        "GRANT ALL ON laravel_web.* TO '_REPOSITORIO_NOMBRE'@'%' IDENTIFIED BY '_NEW_PASSWORD_DATABASE';",
+        "FLUSH PRIVILEGES;",
+        "EXIT",
+        "Ctrl + D"
     ]
 }
