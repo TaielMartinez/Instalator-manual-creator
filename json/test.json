@@ -1,0 +1,31 @@
+{
+    "name": "Crear docker para laravel en servidor Ubuntu",
+    "version": "1.0",
+    "var": [
+        {
+            "<PASSWORD>": "jh3kj2h4w9f873jdf"
+        }
+    ],
+    "tutorial": [
+        {
+            "type": "h1",
+            "text": "Nos conectamos al servidor por SSH"
+        },
+        {
+            "type": "h2",
+            "text": "Nos conectamos al servidor por SSH"
+        },
+        {
+            "type": "h3",
+            "text": "Nos conectamos al servidor por SSH"
+        },
+        {
+            "type": "code",
+            "text": "asjdlkasdhlkasjdlkasgdhasdghasd"
+        },
+        {
+            "type": "code_ext",
+            "text": "test"
+        }
+    ]
+}
